@@ -106,38 +106,34 @@ and returns the score at each pont in the game, like so:
 8th inning: awayTeam - homeTeam
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
-/*
-function getInningScore(cb1, inni){
-  let home = [];
-  let away = [];
-  for (let i = 0; i < inni; i++){
-    home.push (cb1(0,2));
-    away.push (cb1(0,2));
-  }
-}
-  function scoreboard(cb1,cb2,inni) {
-    cb2(cb1,inni)
-    return `1st Inning: ${away[0]} - ${home[0]}`;
-  }
-console.log(getInningScore(inning,9));
-console.log(scoreboard());
 
-//scoreboard(inni,getInningScore,9);
-*/
-function scoreboard(getInningScore){
 
 
 function getInningScore(cb1, i){
-  let home = [];
-  let away = [];
+  let team = [];
   for (let b = 1; b <= i; b++){
-    home.push (cb1(0,2));
-    away.push (cb1(0,2));
+    team.push (cb1(0,2));
   }
-  return home,away;
-}
-console.log(scoreboard(getInningScore, inning, 9));
-//console.log(`1st Inning: ${away[0]} - Home:  ${home[0]} `);
-//
+  return(team);
 }
 
+function scoreboard(){
+  let home = getInningScore(inning,9);
+  let away = getInningScore(inning,9);
+  let homeTotal = home.reduce(function(a,b){return a+b});
+  let awayTotal = away.reduce(function(a,b){return a+b});
+
+
+
+console.log(`1st Inning - Away: ${away[0]} Home: ${home[0]}`);
+console.log(`2nd Inning - Away: ${away[1]} Home: ${home[1]}`);
+console.log(`3rd Inning - Away: ${away[2]} Home: ${home[2]}`);
+console.log(`4th Inning - Away: ${away[3]} Home: ${home[3]}`);
+console.log(`5th Inning - Away: ${away[4]} Home: ${home[4]}`);
+console.log(`6th Inning - Away: ${away[5]} Home: ${home[5]}`);
+console.log(`7th Inning - Away: ${away[6]} Home: ${home[6]}`);
+console.log(`8th Inning - Away: ${away[7]} Home: ${home[7]}`);
+console.log(`9th Inning - Away: ${away[8]} Home: ${home[8]}`);
+console.log(`Final Score - Away: ${awayTotal} Home: ${homeTotal}`);
+}
+scoreboard();
