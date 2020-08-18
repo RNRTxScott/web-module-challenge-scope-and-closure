@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closures give us the ability to put functions together and to access functions from a parent level scope in child level scope.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+The closure is on lines 59,60 / It creates its own data as well as utilizes the const from outside the function block.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+Name is always the same if you call to only dansRoll.  The variable that is changing due to the function is the const newRoll.
+
 c. What is the lexical scope of `newRoll`? 
+
+it can be calld to or reffered to inside the function block or can have arguments fed in outside.
 
 ### Task 2c - Exit Ticket
 
@@ -108,6 +119,6 @@ addSix(21); // returns 27
 
 Follow these steps for completing your project.
 
-- [ ] Submit a pull request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your Team Lead as a reviewer on the pull request
-- [ ] Your Team Lead will count the project as complete by merging the branch back into master
+- [x ] Submit a pull request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+- [x ] Add your Team Lead as a reviewer on the pull request
+- [x ] Your Team Lead will count the project as complete by merging the branch back into master
